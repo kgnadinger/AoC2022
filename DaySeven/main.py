@@ -1,7 +1,7 @@
 import string
 import re
 
-test = False
+test = True
 input = "input.txt"
 testinput = "testinput.txt"
 
@@ -102,6 +102,8 @@ with open(testinput if test else input, "r") as f:
     sumTopDir = findSumOfDir(filesystem)
     unusedSpace = 70000000 - sumTopDir
     leastAmountOfSpaceToDelete = 30000000 - unusedSpace
+
+    printFileSystem(filesystem)
 
     print(f"Part 1: {findSumOfDirectoriesLessThan(100000, filesystem)}")
     print(f"Part 2: {min(findDirectoryToDelete(leastAmountOfSpaceToDelete, filesystem))}")
